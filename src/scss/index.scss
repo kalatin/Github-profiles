@@ -1,0 +1,83 @@
+@import './reset';
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+}
+
+.github {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+	&__title {
+		font-size: 45px;
+	}
+
+	&__search {
+		display: grid;
+		grid-template-columns: 3fr 1fr;
+		input {
+			padding: 10px;
+			border-radius: 10px 0 0 10px;
+			font-size: 20px;
+			background: #f4f4f4;
+		}
+		button {
+			border-radius: 0 10px 10px 0;
+			background: #860f7a;
+			color: white;
+			font-size: 18px;
+		}
+	}
+}
+
+.info {
+	margin-top: 30px;
+	&__container {
+		max-width: 700px;
+		margin: 20px auto 0 auto;
+		text-align: center;
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		flex-direction: column;
+		// row-gap: 15px;
+	}
+	&__image {
+		width: 120px;
+		height: 120px;
+		border-radius: 100%;
+	}
+	&__login {
+		margin-top: 10px;
+		font-size: 20px;
+	}
+	&__name {
+		margin-top: 5px;
+		font-size: 15px;
+		color: #606060;
+	}
+	&__location {
+		display: flex;
+		align-items: center;
+		column-gap: 2px;
+		img {
+			width: 20px;
+			height: 20px;
+		}
+		margin-top: 8px;
+		font-size: 15px;
+		color: #606060;
+	}
+	&__url {
+		margin-top: 20px;
+		font-size: 20px;
+		font-weight: bold;
+		color: #860f7a;
+	}
+}
