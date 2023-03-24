@@ -1,0 +1,50 @@
+document.querySelector('form').addEventListener('submit', e => {
+	e.preventDefault();
+	let input = document.querySelector('input');
+
+	if (input.value) {
+		fetch(`https://api.github.com/users/${input.value}`)
+			.then(response => {
+				if (response.ok) {
+					return response.json();
+				} else {
+					console.log(23232);
+					notFound();
+					return;
+				}
+			})
+			.then(obj => {
+				console.log(obj);
+				setInfo(obj);
+			});
+		input.value = '';
+	}
+});
+
+let container = document.querySelector('.info__container');
+let image = document.querySelector('.info__image');
+let login = document.querySelector('.info__login');
+let name = document.querySelector('.info__name');
+let geo = document.querySelector('.info__location > span');
+let url = document.querySelector('.info__url');
+
+function setInfo(obj) {
+	container.style.display = 'flex';
+	image.src = obj.avatar_url;
+	login.textContent = obj.login;
+	if (obj.name) {
+		name.textContent = obj.name;
+	} else {
+		name.textContent = '';
+	}
+	if (obj.location) {
+		geo.closest('.info__location').style.display = 'flex';
+		geo.textContent = obj.location;
+	} else {
+		geo.closest('.info__location').style.display = 'none';
+	}
+}
+
+function notFound() {
+	container.style.display = 'none';
+}
