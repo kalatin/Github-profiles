@@ -1,5 +1,3 @@
-@import './reset';
-
 body {
 	font-family: 'Roboto', sans-serif;
 }
@@ -15,12 +13,16 @@ body {
 	flex-direction: column;
 	row-gap: 20px;
 	&__title {
+		text-align: center;
 		font-size: 45px;
 	}
 
 	&__search {
 		display: grid;
 		grid-template-columns: 3fr 1fr;
+		> * {
+			border: none;
+		}
 		input {
 			padding: 10px;
 			border-radius: 10px 0 0 10px;
@@ -28,6 +30,9 @@ body {
 			background: #f4f4f4;
 		}
 		button {
+			&:hover {
+				cursor: pointer;
+			}
 			border-radius: 0 10px 10px 0;
 			background: #860f7a;
 			color: white;
@@ -85,4 +90,12 @@ body {
 		font-size: 28px;
 		font-weight: 700;
 	}
+}
+
+input:focus {
+	outline: none !important;
+}
+
+a {
+	text-decoration: none;
 }
