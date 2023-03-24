@@ -110,10 +110,10 @@ body {
   margin-top: 30px;
 }
 .info__container {
+  display: none;
   max-width: 700px;
   margin: 20px auto 0 auto;
   text-align: center;
-  display: flex;
   justify-content: start;
   align-items: center;
   flex-direction: column;
@@ -150,4 +150,10 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: #860f7a;
+}
+.info__found {
+  display: none;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
 }
